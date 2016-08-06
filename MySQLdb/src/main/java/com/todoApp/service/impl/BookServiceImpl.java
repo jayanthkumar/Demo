@@ -13,8 +13,10 @@ public class BookServiceImpl implements BookService {
 	BookDao bookMapper;
 
 	@Override
-	public Book getBook(int id) {
-		return bookMapper.getBook(id);
+	public Book createAndGetBook(int id) {
+		Book book = bookMapper.getBook(id);
+		bookMapper.saveOrUpdate(book);
+		return book;
 	}
 
 	public void setBookMapper(BookDao bookMapper) {

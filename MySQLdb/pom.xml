@@ -10,15 +10,17 @@
 	<properties>
 		<mybatis.version>3.4.0</mybatis.version>
 		<mybatis-spring.version>1.3.0</mybatis-spring.version>
+		<aspectj.version>1.8.6</aspectj.version>
+		<cglib.version>2.2</cglib.version>
 	</properties>
 	<dependencies>
 		<!-- MySQL connector -->
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>5.1.1</version>
-</dependency>
-		
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.1</version>
+		</dependency>
+
 		<!-- MyBatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -45,6 +47,22 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>${cglib.version}</version>
 		</dependency>
 
 		<!-- TodoAp Dependencies -->

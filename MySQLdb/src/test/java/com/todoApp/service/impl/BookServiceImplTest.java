@@ -16,7 +16,7 @@ public class BookServiceImplTest {
 
 	@Test
 	public void testBook() {
-		Book book = bookService.getBook(1);
+		Book book = bookService.createAndGetBook(1);
 		System.out.println("book is:" + book);
 	}
 }
