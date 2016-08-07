@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.todoApp</groupId>
 	<artifactId>Project</artifactId>
-	<version>${todoApp.version}</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>SpringRest</module>

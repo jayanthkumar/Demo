@@ -1,5 +1,7 @@
 package com.todoApp.service.impl;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +16,16 @@ public class BookServiceImplTest {
 	@Autowired(required = true)
 	BookServiceImpl bookService;
 
+//	@Test
+//	public void testBook() {
+//		Book book = bookService.getBook(1);
+//		System.out.println("book is:" + book);
+//	}
 	@Test
-	public void testBook() {
-		Book book = bookService.createAndGetBook(1);
-		System.out.println("book is:" + book);
+	public void testAllBooks(){
+		List<Book> books = bookService.getAllBooks();
+		for(Book book: books) {
+			System.out.println("Each book is :"+ book);
+		}
 	}
 }

@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.todoApp</groupId>
     <artifactId>Project</artifactId>
-    <version>${todoApp.version}</version>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>Commons</artifactId>
 </project>

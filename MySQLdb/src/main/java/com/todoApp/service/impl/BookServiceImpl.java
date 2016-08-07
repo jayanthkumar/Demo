@@ -1,6 +1,7 @@
 package com.todoApp.service.impl;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
+
 import org.springframework.transaction.annotation.Transactional;
 
 import com.todoApp.dao.BookDao;
@@ -9,17 +10,22 @@ import com.todoApp.service.BookService;
 
 @Transactional
 public class BookServiceImpl implements BookService {
-	
-	BookDao bookMapper;
+
+	BookDao bookDao;
 
 	@Override
-	public Book createAndGetBook(int id) {
-		Book book = bookMapper.getBook(id);
-		bookMapper.saveOrUpdate(book);
+	public Book getBook(int id) {
+		Book book = bookDao.getBook(id);
+		bookDao.saveOrUpdate(book);
 		return book;
 	}
 
 	public void setBookMapper(BookDao bookMapper) {
-		this.bookMapper = bookMapper;
+		this.bookDao = bookMapper;
+	}
+
+	@Override
+	public List<Book> getAllBooks() {
+		return this.bookDao.getAllBooks();
 	}
 }
