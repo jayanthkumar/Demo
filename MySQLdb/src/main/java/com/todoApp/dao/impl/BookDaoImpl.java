@@ -21,15 +21,33 @@ public class BookDaoImpl extends SqlSessionDaoSupport implements BookDao {
 	}
 
 	@Override
-	public int saveOrUpdate(Book book) {
+	public int save(Book book) {
 		BookDao bookDao = getSqlSession().getMapper(BookDao.class);
-		return bookDao.saveOrUpdate(book);
+		return bookDao.save(book);
 	}
 
 	@Override
 	public List<Book> getAllBooks() {
 		BookDao bookDao = getSqlSession().getMapper(BookDao.class);
 		return bookDao.getAllBooks();
+	}
+
+	@Override
+	public boolean deleteBook(int id) {
+		BookDao bookDao = getSqlSession().getMapper(BookDao.class);
+		return bookDao.deleteBook(id);
+	}
+
+	@Override
+	public void deleteAllBooks() {
+		BookDao bookDao = getSqlSession().getMapper(BookDao.class);
+		bookDao.deleteAllBooks();
+	}
+
+	@Override
+	public int update(Book book) {
+		BookDao bookDao = getSqlSession().getMapper(BookDao.class);
+		return bookDao.update(book);
 	}
 
 }

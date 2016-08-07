@@ -16,7 +16,6 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public Book getBook(int id) {
 		Book book = bookDao.getBook(id);
-		bookDao.saveOrUpdate(book);
 		return book;
 	}
 
@@ -27,5 +26,39 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public List<Book> getAllBooks() {
 		return this.bookDao.getAllBooks();
+	}
+
+	@Override
+	public Book deleteBook(int id) {
+		Book book = bookDao.getBook(id);
+		if (book != null) {
+			this.bookDao.deleteBook(id);
+		} else {
+			throw new RuntimeException("Book not found to delete");
+		}
+		return book;
+	}
+
+	@Override
+	public void deleteAllBooks() {
+		bookDao.deleteAllBooks();
+	}
+
+	@Override
+	public Book add(Book book) {
+		int numberOfBooksAdded = bookDao.save(book);
+		if (numberOfBooksAdded > 0) {
+			return book;
+		}
+		return null;
+	}
+
+	@Override
+	public Book update(Book book) {
+		int numberOfBooksUpdate = bookDao.update(book);
+		if (numberOfBooksUpdate > 0) {
+			return book;
+		}
+		return null;
 	}
 }
